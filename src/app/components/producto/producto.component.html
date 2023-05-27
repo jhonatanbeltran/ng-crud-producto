@@ -1,0 +1,119 @@
+<nav class="navbar  bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://logodownload.org/wp-content/uploads/2020/03/new-era-logo.png" alt="Logo" width="280"
+                height="180">
+        </a>
+        <div class="col-md-4">
+            <h1>Manejo de productos</h1>
+        </div>
+        <img src="https://cdn.freebiesupply.com/logos/large/2x/new-era-1-logo-png-transparent.png" width="205" height="200">
+    </div>
+</nav>
+
+<div class="col-md-12 p-2">
+    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
+            class="fa fa-save"></i>Crear producto</button>
+
+    <table class="table mt-2 table-bordered">
+
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Color</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let item of listProductos">
+                <td>{{item.id}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.marca}}</td>
+                <td>{{item.color}}</td>
+                <td>{{item.precio}}</td>
+                <td>{{item.stock}}</td>
+                <td>{{item.imagen}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    &nbsp;
+                    <button type="button" class="btn btn-danger btn-sm">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+
+
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5">Nuevo Producto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <form>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Nombre</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="nombre">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Marca</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="marca">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Color</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="color">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Precio</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="precio">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Stock</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="stock">
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-sm-2 col-form-label">Imagen</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" formControlName="imagen">
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success btn-sm">Save</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
